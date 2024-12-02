@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import { ApolloProvider } from '@apollo/client';
-import client from './lib/apolloClient';
+// import { ApolloProvider } from '@apollo/client';
+// import client from './lib/apolloClient';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,19 +25,19 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* ApolloProvider must wrap only client-side */}
-        <ApolloProviderWrapper>{children}</ApolloProviderWrapper>
+     
+     {children}
       </body>
     </html>
   );
 }
 
 // Separate the ApolloProvider to ensure client-side rendering
-function ApolloProviderWrapper({ children }) {
-  if (typeof window === "undefined") {
-    // If on the server, return children directly
-    return children;
-  }
+// function ApolloProviderWrapper({ children }) {
+//   if (typeof window === "undefined") {
+//     // If on the server, return children directly
+//     return children;
+//   }
 
-  return <ApolloProvider client={client}>{children}</ApolloProvider>;
-}
+//   return <ApolloProvider client={client}>{children}</ApolloProvider>;
+// }
