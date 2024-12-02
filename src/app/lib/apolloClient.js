@@ -5,7 +5,7 @@ import { GraphQLClient } from "graphql-request";
 //     cache: new InMemoryCache(),
 //     ssrMode: typeof window !== 'undefined',
 // });
-export const graphQLClient = new GraphQLClient('http://127.0.0.1:8000/graphql/');
+export const client = new GraphQLClient('http://127.0.0.1:8000/graphql/');
 
 // export default client;
 
